@@ -27,7 +27,6 @@ sap.ui.define([
 				oView.addDependent(oDialog);
 			}
 			oDialog.open();
-			alert(oView.getId());
 		}
 	});
 
