@@ -1,0 +1,17 @@
+<mvc:View
+	controllerName="sap.ui.demo.wt.controller.NoteList"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<List
+		headerText="{i18n>invoiceListTitle}"
+		class="sapUiResponsiveMargin"
+		width="auto"
+		items="{note>/notes}">
+		<items>
+			<ObjectListItem
+				title="{note>title}"
+				type="Navigation"
+				press="onPress"/>
+		</items>
+	</List>
+</mvc:View>

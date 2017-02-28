@@ -26,6 +26,10 @@ sap.ui.define([
 
 			// set dialog
 			this._helloDialog = new HelloDialog(this.getAggregation("rootControl"));
+			
+			 // create the views based on the url/hash
+	         this.getRouter().initialize();
+	         
 		},
 		
 		openHelloDialog : function () {
