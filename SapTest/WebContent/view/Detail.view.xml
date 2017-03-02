@@ -8,10 +8,11 @@
 		showNavButton="true"
 		navButtonPress="onNavBack">
 		<ObjectHeader
+			
 			responsive="true"
 			fullScreenOptimized="true"
-			intro="{/title}"
-			title="{/title}">
+			intro="{note>contents}"
+			title="{note>title}">
 			<!-- <attributes>
 				<ObjectAttribute title="{i18n>quantityTitle}" text="{note>Quantity}"></ObjectAttribute>
 				<ObjectAttribute title="{i18n>dateTitle}" text="{

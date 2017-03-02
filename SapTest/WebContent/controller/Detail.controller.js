@@ -11,9 +11,10 @@ sap.ui.define([
 			oRouter.getRoute("detail").attachPatternMatched(this._onObjectMatched, this);
 		},
 		_onObjectMatched: function (oEvent) {
-			
+			console.log("받은 param : "+oEvent.getParameter("arguments").noteParam);
 			this.getView().bindElement({
-				path: "/" + oEvent.getParameter("arguments").noteParam
+				path: "/notes/" + oEvent.getParameter("arguments").noteParam,
+				model: "note"
 			});
 		},
 		onNavBack: function () {
