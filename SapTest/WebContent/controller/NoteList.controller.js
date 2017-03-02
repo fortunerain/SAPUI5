@@ -26,7 +26,7 @@ sap.ui.define([
 		onPress: function (oEvent) {
 			var oItem = oEvent.getSource();
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
-//			var param = "notes(title='"+oItem.getBindingContext("note").getProperty("title")+"')";
+//			var param = oItem.getBindingContext("note").getProperty("title");
 			var param = oItem.getBindingContext("note").getPath().substr(7);
 			console.log("param : "+param);
 			

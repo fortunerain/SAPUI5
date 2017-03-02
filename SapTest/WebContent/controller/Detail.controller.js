@@ -14,6 +14,7 @@ sap.ui.define([
 			console.log("받은 param : "+oEvent.getParameter("arguments").noteParam);
 			this.getView().bindElement({
 				path: "/notes/" + oEvent.getParameter("arguments").noteParam,
+//				path: "/" + oEvent.getParameter("arguments").noteParam,
 				model: "note"
 			});
 		},

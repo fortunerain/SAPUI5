@@ -70,7 +70,7 @@
 		  "target": "overview"
 		},
 		{
-		  "pattern": "{noteParam}",
+		  "pattern": "detail/{noteParam}",
 		  "name": "detail",
 		  "target": "detail"
 		}
