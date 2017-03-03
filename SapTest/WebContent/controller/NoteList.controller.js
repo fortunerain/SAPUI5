@@ -28,12 +28,11 @@ sap.ui.define([
 			var oRouter = sap.ui.core.UIComponent.getRouterFor(this);
 //			var param = oItem.getBindingContext("note").getProperty("title");
 			var param = oItem.getBindingContext("note").getPath().substr(7);
-			console.log("param : "+param);
+			console.log("param : "+oItem.getBindingContext("note").getPath());
 			
 			
 			//param으로 title을 던진다.
 			oRouter.navTo("detail", {
-//				noteParam: oItem.getBindingContext("note").getPath().substr(1)
 				noteParam: param
 			});
 		}

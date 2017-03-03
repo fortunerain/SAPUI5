@@ -3,30 +3,31 @@
 	xmlns="sap.m"
 	xmlns:mvc="sap.ui.core.mvc"
 	xmlns:wt="sap.ui.demo.wt.control">
+	
 	<Page
 		title="{i18n>detailPageTitle}"
 		showNavButton="true"
+		responsive="true"
 		navButtonPress="onNavBack">
-		<ObjectHeader
-			
-			responsive="true"
-			fullScreenOptimized="true"
-			intro="{note>contents}"
-			title="{note>title}">
-			<!-- <attributes>
-				<ObjectAttribute title="{i18n>quantityTitle}" text="{note>Quantity}"></ObjectAttribute>
-				<ObjectAttribute title="{i18n>dateTitle}" text="{
-					path: 'note>ShippedDate',
-					type: 'sap.ui.model.type.Date',
-					formatOptions: {
-					  style: 'long',
-					  source: {
-						pattern: 'yyyy-MM-ddTHH:mm:ss'
-					  }
-					}
-				  }"/>
-			</attributes> -->
-		</ObjectHeader>
+		<headerContent>  
+	        <Button  
+                icon="sap-icon://save" 
+                text="Save" 
+                press="onSave"/>
+	    </headerContent> 
+		<Input id="title"
+			value="{note>title}"
+			width="100%"
+			valueLiveUpdate="true"
+			liveChange="handleLiveChange"
+		/>
+		<TextArea id="contents"
+			value="{note>contents}"
+			valueLiveUpdate="true"
+			liveChange="handleLiveChange"
+			width="100%"
+			growing="true"
+		/>
 	</Page>
 </mvc:View>
 
