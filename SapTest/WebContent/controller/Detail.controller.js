@@ -47,7 +47,11 @@ sap.ui.define([
 	        //JSON.stringify() 는 json 객체를 json text로 만들어준다. 안해주면 400 에러 발생함. 반대는 JSON.parse()
 	        var aData = jQuery.ajax({
 	            type : "post",
-	            contentType : "application/json; charset=utf-8",
+	            headers : {
+	            	'content-type' : 'application/json',
+	            	'x-id' : '123'
+	            },
+//	            contentType : "application/json",
 	            url : apiUrl,
 	            data : JSON.stringify(oData),
 	            dataType : "json",
