@@ -29,23 +29,25 @@ sap.ui.define([
 			}
 		},
 		onSave: function(oEvent) {
-			var titleVal = this.getView().byId("title").getValue();
-			var contentsVal = this.getView().byId("contents").getValue();
-			console.log("titleVal : "+titleVal+" contentsVal : "+contentsVal);
+			var _id = this.getView().byId("_id").getValue();
+			var title = this.getView().byId("title").getValue();
+			var contents = this.getView().byId("contents").getValue();
+			var user = this.getView().byId("user").getValue();
+			var regdate = this.getView().byId("regdate").getValue();
 			
-			var apiUrl = "http://localhost:3000/api/write";
-			//this.getView().setUri(uri);
+			var apiUrl = "http://localhost:3000/api/note/save";
 	        
 	        // set data model
 			var oData = {
-				"title" : titleVal,
-				"contents" : contentsVal
+				"_id": _id,
+				"title": title,
+				"contents": contents,
+				"user": user,
+				"regdate": regdate
 			};
-//			var oModel = new JSONModel(oData);
-//	        console.log("oData : "+oData);
-	        
+	        console.log(oData);
 	        //JSON.stringify() 는 json 객체를 json text로 만들어준다. 안해주면 400 에러 발생함. 반대는 JSON.parse()
-	        var aData = jQuery.ajax({
+	        jQuery.ajax({
 	            type : "post",
 	            headers : {
 	            	'content-type' : 'application/json',
@@ -57,16 +59,13 @@ sap.ui.define([
 	            dataType : "json",
 	            async: false, 
 	            success : function(data,textStatus, jqXHR) {
-//	                oModel.setData({modelData : data}); 
-	                alert("success to post"+data.result);
+	                alert("success to post : "+data.result);
 	            },
 	            error : function(data){
 	            	alert("error!!");
 	            }
 	
 	        });
-			
-			//this.getView().byId("getValue").setText(value);
 		}
 		
 		

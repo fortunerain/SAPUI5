@@ -28,6 +28,22 @@
 			width="100%"
 			growing="true"
 		/>
+		
+		
+		<!-- hidden 값들 -->
+		<Input id="_id"
+			value="{note>_id}"
+			visible="false"
+		/>
+		<Input id="user"
+			value="{note>user}"
+			visible="false"
+		/>
+		<Input id="regdate"
+			value="{note>regdate}"
+			visible="false"
+		/>
+		
 	</Page>
 </mvc:View>
 
